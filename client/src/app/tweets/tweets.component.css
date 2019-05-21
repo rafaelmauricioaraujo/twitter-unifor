@@ -1,0 +1,47 @@
+.btn-group{
+    width: max-content;
+
+
+
+}
+.btn{
+    border:none;
+    border-radius: 0.3rem;
+    padding:0.6rem;
+    margin-right:0.4rem;
+    cursor: pointer;
+    font-weight: bold;
+font-size:0.9em;
+}.btn-green{
+    background:green;
+    color:white;
+}.btn-red{
+background:red;
+color:white;
+
+}
+
+.wrapper{
+    background:rgb(230, 236, 240);
+    padding:0.6rem 0;
+}
+.container{
+    
+    background:white;
+    height: 100vh max-content;
+    width: 65%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,0.2);
+   
+}ul li{
+    list-style-type: none;
+}.barraInicial{
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding:.5rem;
+}.tweet{
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    padding:1rem;
+    height: max-content;
+    position: relative;
+}

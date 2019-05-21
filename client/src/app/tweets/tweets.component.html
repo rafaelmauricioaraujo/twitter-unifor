@@ -1,0 +1,23 @@
+<app-menu></app-menu>
+<div class="wrapper">
+  <div class="container">
+
+    <div class="barraInicial">
+      <h2>Tweets</h2>
+    </div>
+    <div *ngFor="let tweet of listaTweets.reverse()">
+      <div class="tweet-ativo tweet" *ngIf="tweet.ativo">
+        <app-tweet [tweet]="tweet"></app-tweet>
+        <div class="btn-group">
+          <button class="btn btn-green" routerLink="/update/{{tweet.id}}">
+            Update
+          </button>
+          <button class="btn btn-red" title="delete tweet" (click)="delete(tweet)">Delete</button>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>

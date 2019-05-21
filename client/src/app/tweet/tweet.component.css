@@ -1,0 +1,48 @@
+.btn-group{
+    width: max-content;
+
+
+
+}
+.btn{
+    border:none;
+    border-radius: 0.3rem;
+    padding:0.6rem;
+    margin-right:0.4rem;
+    cursor: pointer;
+    font-weight: bold;
+font-size:0.9em;
+}.btn-green{
+    background:green;
+    color:white;
+}.btn-red{
+background:red;
+color:white;
+
+}
+
+.box{
+    display: flex;
+    height: max-content;
+}.box img{
+    height:100px;
+    width: 100px;
+    border-radius:50%;
+}.box h3{
+    margin-top:0.2rem;
+    margin-left:1rem;
+}
+.post{
+    height: max-content;
+    margin-top: 0.2rem;
+    margin-left:1rem;
+    padding-left:1rem;
+}.post img{
+    max-height: 600px;
+    height: calc(100% - 80px);
+
+    max-width:700px;
+    width: calc(100% - 80px);
+    border-radius:0;
+    padding-top:2.5rem;
+}
