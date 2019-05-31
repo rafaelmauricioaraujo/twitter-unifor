@@ -11,7 +11,7 @@ export class TweetService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  SERVER_URL: string = "http://localhost:8080/api/Tweets";
+  SERVER_URL: string = "http://localhost:8080/tweet";
 
   constructor(private http: HttpClient) {
 

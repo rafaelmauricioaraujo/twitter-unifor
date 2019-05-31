@@ -30,9 +30,7 @@ import { TweetComponent } from './tweet/tweet.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
