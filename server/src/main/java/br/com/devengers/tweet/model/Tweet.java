@@ -1,6 +1,6 @@
 package br.com.devengers.tweet.model;
 
-import java.util.Map;
+//import java.util.Map;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,23 +25,66 @@ public class Tweet {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "TEXTO")
-	private String texto;
+	@Column(name = "DESCRIPTION")
+	private String description;
 	
-	@Column(name = "USUARIO")
-	private String usuario;
+	@Column(name = "NAME")
+	private String name;
 
+	@Column(name = "TITLE")
+	private String title;
+
+	@Column(name = "ATIVO")
+	private boolean ativo;
+
+	@Column(name = "URL")
+	private String url;
+
+	@Column(name = "PEFURL")
+	private String pefurl;
 	
 	public Long getId() {
 		return this.id;
 	}
 
-	public String getTexto() {
-		return texto;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public String getUsuario() {
-		return usuario;
-	}	
+	public String getName() {
+		return this.name;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public boolean getAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(Boolean ativo) {
+		this.ativo = ativo;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public String getPefurl() {
+		return pefurl;
+	}
+
+	public void setPefurl(String pefurl) {
+		this.pefurl = pefurl;
+	}
 
 }

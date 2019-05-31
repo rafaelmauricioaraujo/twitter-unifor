@@ -27,7 +27,7 @@ import br.com.devengers.tweet.model.Tweet;
 import br.com.devengers.tweet.repository.TweetRepository;
 
 @RestController
-@RequestMapping("/tweet")
+@RequestMapping("/tweets")
 public class TweetController {
 
 	@Autowired
