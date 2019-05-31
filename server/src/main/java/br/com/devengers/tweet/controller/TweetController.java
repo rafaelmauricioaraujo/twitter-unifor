@@ -32,47 +32,46 @@ public class TweetController {
 
 	@Autowired
 	private TweetRepository repository;
-	
+
 	@GetMapping
-    public List<Tweet> findAll() {
+	public List<Tweet> findAll() {
 		return repository.findAll();
 	}
-	
+
 	@PostMapping
-	public ResponseEntity<Object> salvar(@RequestBody @Valid Tweet tweet){
-		
+	public ResponseEntity<Object> salvar(@RequestBody @Valid Tweet tweet) {
+
 		Tweet tweetSalvo = repository.save(tweet);
-		
+
 		URI location = montarLocation(tweetSalvo);
 
 		return ResponseEntity.created(location).build();
 	}
-	
+
 	@PutMapping
-	public void atualizar(@RequestBody @Valid Tweet tweet){
+	public void atualizar(@RequestBody @Valid Tweet tweet) {
 		repository.save(tweet);
 	}
-	
+
 	@DeleteMapping(path = "/{id}")
-	public void deletar(@PathVariable("id") Long id){
+	public void deletar(@PathVariable("id") Long id) {
 		repository.deleteById(id);
 	}
-	
-	private URI montarLocation(Tweet tweet) {
-		return ServletUriComponentsBuilder
-                .fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(tweet.getId())
-                .toUri();
+
+	@DeleteMapping()
+	public void deletarTodos() {
+		repository.deleteAll();
 	}
-	
+
+	private URI montarLocation(Tweet tweet) {
+		return ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(tweet.getId()).toUri();
+	}
+
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public List<String> handleValidationExceptions(MethodArgumentNotValidException ex) {
-	    return ex.getBindingResult()
-	    		 .getAllErrors().stream()
-	    		 .map(ObjectError::getDefaultMessage)
-	    		 .collect(Collectors.toList());
+		return ex.getBindingResult().getAllErrors().stream().map(ObjectError::getDefaultMessage)
+				.collect(Collectors.toList());
 	}
-	
+
 }

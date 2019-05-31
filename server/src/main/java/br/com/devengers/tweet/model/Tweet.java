@@ -1,5 +1,7 @@
 package br.com.devengers.tweet.model;
 
+import java.util.Map;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,6 +30,18 @@ public class Tweet {
 	
 	@Column(name = "USUARIO")
 	private String usuario;
+
 	
+	public Long getId() {
+		return this.id;
+	}
+
+	public String getTexto() {
+		return texto;
+	}
+
+	public String getUsuario() {
+		return usuario;
+	}	
 
 }

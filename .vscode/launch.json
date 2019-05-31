@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - TweetApplication",
+            "request": "launch",
+            "mainClass": "br.com.devengers.tweet.TweetApplication",
+            "projectName": "tweet"
+        }
+    ]
+}
