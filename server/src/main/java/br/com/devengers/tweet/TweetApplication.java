@@ -14,12 +14,24 @@ public class TweetApplication {
 		SpringApplication.run(TweetApplication.class, args);
 	}
 
+    /*
 	public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/tweets").allowedOrigins("http://localhost:8080");
+                registry.addMapping("/**").allowedOrigins("*").allowedMethods("GET");
             }
         };
     }
+    */
+
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/tweets").allowedOrigins("http://localhost:4200");
+            }
+        };
+    }
+
 }

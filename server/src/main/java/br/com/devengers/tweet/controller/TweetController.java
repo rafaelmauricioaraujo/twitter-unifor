@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +29,7 @@ import br.com.devengers.tweet.repository.TweetRepository;
 
 @RestController
 @RequestMapping("/tweets")
+@CrossOrigin
 public class TweetController {
 
 	@Autowired
@@ -36,6 +38,11 @@ public class TweetController {
 	@GetMapping
 	public List<Tweet> findAll() {
 		return repository.findAll();
+	}
+
+	@GetMapping(path = "/{id}")
+	public Tweet getById(@PathVariable("id") Long id) {
+		return repository.findById(id).orElse(null);
 	}
 
 	@PostMapping
@@ -48,7 +55,7 @@ public class TweetController {
 		return ResponseEntity.created(location).build();
 	}
 
-	@PutMapping
+	@PutMapping(path = "/{id}")
 	public void atualizar(@RequestBody @Valid Tweet tweet) {
 		repository.save(tweet);
 	}

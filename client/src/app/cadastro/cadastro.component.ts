@@ -43,13 +43,12 @@ export class CadastroComponent implements OnInit {
     let nome = post.usuario.nome;
     let fotourl = post.usuario.fotoUrl;
     post.name = nome;
-    post.pefurl = fotourl;
+    //post.pefurl = fotourl;
 
 
-    if (this.url) {
-      this.tweet.url = this.url;
+    
 
-    }
+    
     if (this.id) {
 
       this.tweet.name = nome;

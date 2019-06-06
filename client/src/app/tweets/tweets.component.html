@@ -5,7 +5,7 @@
     <div class="barraInicial">
       <h2>Tweets</h2>
     </div>
-    <div *ngFor="let tweet of listaTweets.reverse()">
+    <div *ngFor="let tweet of listaTweets">
       <div class="tweet-ativo tweet" *ngIf="tweet.ativo">
         <app-tweet [tweet]="tweet"></app-tweet>
         <div class="btn-group">

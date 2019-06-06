@@ -11,7 +11,7 @@ export class TweetService {
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
-  SERVER_URL: string = "http://localhost:8080/tweet";
+  SERVER_URL: string = "http://localhost:8080/tweets";
 
   constructor(private http: HttpClient) {
 
@@ -52,7 +52,9 @@ export class TweetService {
     return this.http.get<Tweet>(url).pipe(
 
       catchError(this.handleError<Tweet>(`getTweet id=${id}`))
+      
     );
+    console.log("deu erro")
   }
 
 
